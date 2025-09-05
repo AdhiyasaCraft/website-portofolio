@@ -118,9 +118,9 @@ const form = document.getElementById("contactForm");
 form.addEventListener("submit", function(event) {
 event.preventDefault(); // Cegah reload page
 
-const name = form.name.value.trim();
-    const email = form.email.value.trim();
-    const message = form.message.value.trim();
+const name = form.elements["from_name"].value.trim();
+const email = form.elements["from_email"].value.trim();
+const message = form.elements["message"].value.trim();
 
     formMessage.textContent = "";
     formMessage.style.color = "red";
@@ -159,4 +159,5 @@ const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
 function toggleSidebar() {
   document.getElementById('sidebar').classList.toggle('active');
+
 }
