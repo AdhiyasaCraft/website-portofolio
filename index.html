@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="id" class="scroll-smooth">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Portofolio</title>
+    <meta
+      name="description"
+      content="Portofolio Frontend/Full‑Stack: proyek, keterampilan, pengalaman, dan kontak."
+    />
+    <meta property="og:title" content="Portofolio — Nama Anda" />
+    <meta
+      property="og:description"
+      content="Proyek, skill, pengalaman, dan kontak."
+    />
+    <meta name="theme-color" content="#0ea5e9" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  </head>
+  <body>
+    <!-- Header Section Start -->
+
+    <nav class="nav">
+      <div class="container nav-inner">
+        <a href="#" class="brand" aria-label="Home">Kevin Adhiyasa Ilham</a>
+        <nav class="nav-links" aria-label="Primary">
+          <a href="#about">Tentang</a>
+          <a href="#projects">Proyek</a>
+          <a href="#experience">Pengalaman</a>
+          <a href="#contact">Kontak</a>
+        </nav> 
+        <div class="hamburger" onclick="toggleSidebar()">☰</div>
+      </div>
+    </nav>
+
+<aside id="sidebar" class="sidebar">
+<button class="close-btn" onclick="toggleSidebar()">✖</button>
+<nav class="sidebar-links">
+  <a href="#about" onclick="toggleSidebar()">Tentang</a>
+  <a href="#projects" onclick="toggleSidebar()">Proyek</a>
+  <a href="#experience" onclick="toggleSidebar()">Pengalaman</a>
+  <a href="#contact" onclick="toggleSidebar()">Kontak</a>
+</nav>
+</aside>
+
+
+    <!-- Header Section End -->
+
+    <section class="hero container">
+      <h1 class="title">Halo, saya<span> Kevin Adhiyasa Ilham </span>Web Developer</h1>
+    <p class="subtitle">
+        Selamat datang di portofolio saya!<br>Saya Kevin Adhiyasa Ilham, Inilah Web Portofolio saya, Untuk lengkapnya bisa klik dibawah ini.
+      <div class="hero-cta">
+        <a class="btn primary" href="#projects">Lihat Proyek</a>
+        <a class="btn" href="#contact">Hubungi Saya</a>
+        <!-- <a class="btn" href="#cv" id="downloadCV">📄 Unduh CV</a> -->
+      </div>
+    </section>
+
+    <section id="about" class="container reveal">
+      <h2 class="section-title">Tentang</h2>
+      <div class="about">
+        <div class="card">
+          <div class="row">
+            <img
+              class="avatar"alt="Foto profil"src="images/avatar.jpg"/>
+            <div>
+              <h3>Kevin Adhiyasa Ilham</h3>
+              <p class="muted">Frontend / Video Editor · Cirebon, ID</p>
+              <div class="row">
+                <a class="chip" href="mailto:email@domain.com">✉️ adhiyasailham4@gmail.com</a>
+                <a class="chip" href="https://github.com/AdhiyasaCraft" target="_blank" rel="noopener">🐙 GitHub</a>
+                <a class="chip" href="https://www.linkedin.com/in/kevin-adhiyasa-ilham-5863412ab" target="_blank" rel="noopener">🔗 LinkedIn</a>
+              </div>
+            </div>
+          </div>
+        <div class="spacer"></div>
+          <p>Saya Kevin Adhiyasa Ilham, seorang Front End Developer, Video Editor, dan Konten Kreator.  
+          Fokus pada membangun Web, mengedit video, dan membuat konten kreatif yang bisa menginspirasi banyak orang.
+          </p>
+        </div>
+        <div class="card">
+          <h3>Keahlian</h3>
+          <div class="chips" id="skills"></div>
+          <div class="spacer"></div>
+          <h3>Tools</h3>
+          <div class="chips" id="tools"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects" class="container reveal">
+      <h2 class="section-title">Proyek Pilihan</h2>
+      <div class="grid projects" id="projectGrid">
+        <!-- Project cards injected by JS -->
+      </div>
+    </section>
+
+    <section id="experience" class="container reveal">
+      <h2 class="section-title">Pengalaman</h2>
+      <div class="timeline" id="timeline">
+        <!-- Timeline injected by JS -->
+      </div>
+    </section>
+
+<section id="contact" class="container reveal">
+<h2 class="section-title">Kontak</h2>
+<p class="muted">Ingin bekerja sama? Kirim pesan melalui formulir di bawah ini.</p>
+
+<form id="contactForm" novalidate>
+  <div class="grid" style="grid-template-columns: 1fr 1fr">
+    <label>
+      <span class="muted">Nama</span>
+      <input required name="name" placeholder="Nama lengkap" />
+    </label>
+
+    <label>
+      <span class="muted">Email</span>
+      <input required name="email" type="email" placeholder="nama@email.com"/>
+    </label>
+</div>
+    <label>
+      <span class="muted">Pesan</span>
+      <textarea required name="message" placeholder="Tulis pesan Anda..."></textarea>
+    </label>
+<div id="formMessage" style="margin-top:10px; font-size:14px;"></div>   
+<div class="row">
+  <button class="btn primary" type="submit">Kirim</button>
+  <span
+  id="formStatus"
+  class="muted"
+  role="status"
+  aria-live="polite"
+      ></span>
+    </div>
+  </form>
+</section>
+
+
+<footer>
+<div class="container">
+  © <span id="year"></span> Kevin Adhiyasa Ilham
+</div>
+</footer>
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
